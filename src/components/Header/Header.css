@@ -1,0 +1,6 @@
+.navbar-nav a{
+    text-decoration: none !important;
+    font-size: 12px;
+    padding: 5px 18px !important;
+    font-weight: 500 !important;
+}

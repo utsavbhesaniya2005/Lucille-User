@@ -1,0 +1,26 @@
+.shop{
+    height: 100vh;
+    background-color: #F3F1F2;
+}
+.btn{
+    background-color: transparent !important;
+    color: #232323 !important;
+    font-size: 12px !important;
+    padding: 0 15px !important;
+    line-height: 34px !important;
+    border-radius: 2px !important;
+    text-transform: uppercase;
+    font-weight: 400 !important;
+    border: 1px solid #232323 !important;
+}
+.btn:hover{
+    background-color: #d15254 !important;
+    color: white !important;
+    border-color: white !important;
+}
+.card{
+    transition: all 0.3s ease-in-out;
+}
+.card:hover{
+    transform: translateY(-10px);
+}

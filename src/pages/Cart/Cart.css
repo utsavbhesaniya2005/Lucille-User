@@ -1,0 +1,11 @@
+.cart{
+    height: 100vh;
+    background-color: #F3F1F2;
+    padding-top: 140px;
+    padding-bottom: 50px;    
+}
+.cart-heading h1{
+    font-size: 50px;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
