@@ -91,8 +91,6 @@ export const signUpAsync = (users) => {
                 uname : userCred.user.displayName,
                 email : userCred.user.email
             }
-
-            localStorage.setItem('userLoginId', JSON.stringify(signUpUser.uid));
             
             addDoc(collection(db, "users"), signUpUser);
 
@@ -186,13 +184,12 @@ export const getUserId = () => {
 
             let getUser = await getDocs(collection(db, 'users'));
 
-            let singleUser = getUser.docs.find((doc) => doc.data().uid === getLoginId);
+            getUser.forEach((res) => {
+                if(res.data().uid === getLoginId){
 
-            if(singleUser){
-
-                let UserData = singleUser.data();
-                dispatch(userSignInSuc(UserData));
-            }
+                    dispatch(userSignInSuc(res.data()));
+                }
+            })
 
         }catch(err){
 
@@ -209,8 +206,7 @@ export const userLogoutAsync = () => {
             
             await signOut(auth);
             localStorage.removeItem('userLoginId');
-            console.log("LOGOUT DONE");
-            
+                
             dispatch(userLogout());
         }catch(err){
             

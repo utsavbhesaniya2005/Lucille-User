@@ -103,7 +103,7 @@ const SignUp = () => {
                 :
                 <div className="wrapper">
                     <div className="logo">
-                        <img src="../src/assets/images/logo/logo.png" alt="Logo" />
+                        <img src="../src/assets/logo/logo.png" alt="Logo" />
                     </div>
                     <div className="text-center mt-4 name">
                         Lucille
@@ -121,7 +121,7 @@ const SignUp = () => {
                         </div>
                         <div className="form-field d-flex align-items-center">
                             <span className="fas fa-key"></span>
-                            <input type="pass" name="pass" id="pwd" onChange={handleInput} value={signUpInput.pass} placeholder="Password" className={passwordError ? 'input-error' : ''} />
+                            <input type="password" name="pass" id="pwd" onChange={handleInput} value={signUpInput.pass} placeholder="Password" className={passwordError ? 'input-error' : ''} />
                             {passwordError && <div className="error-message">{passwordErrorMessage}</div>}
                         </div>
                         <button className="btn mt-3" onClick={validateInputs}>Sign Up</button>

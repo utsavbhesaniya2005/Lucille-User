@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Header from '../../components/Header/Header';
 import './Shop.css'
 import { useEffect } from 'react';
-import { getProductAsync } from '../../services/actions/ProductAction';
+import { addToCartAsync, getProductAsync } from '../../services/actions/ProductAction';
 import { useNavigate } from 'react-router';
 
 const Shop = () => {
@@ -13,6 +13,10 @@ const Shop = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const handleCart = (id) => {
+        dispatch(addToCartAsync({id: id, user_id: user.uid}));
+    }
 
     useEffect(() => {
         if(!user){
@@ -37,7 +41,7 @@ const Shop = () => {
                                     <div className="card-body">
                                         <h5 className="card-title mt-3">{product.pname}</h5>
                                         <p className="card-text text-danger my-3 mb-4">${product.price}</p>
-                                        <button className="btn">Add to Cart</button>
+                                        <button className="btn" onClick={() => handleCart(product.prod_id)}>Add to Cart</button>
                                     </div>
                                 </div>
                             </div>

@@ -1,6 +1,8 @@
 const initialState = {
     products : [],
-    productErr : null
+    cart : [],
+    productErr : null,
+    isOrder : false
 }
 
 const ProductReducer = (state = initialState, action) => {
@@ -11,13 +13,36 @@ const ProductReducer = (state = initialState, action) => {
             return{
                 ...state,
                 products : action.payload,
-                productErr : null
+                productErr : null,
+                isOrder : false
             }
 
         case 'GET_PRODUCTS_REJ' :
             return{
                 ...state,
-                productErr : action.payload
+                productErr : action.payload,
+                isOrder : false
+            }
+
+        case 'ADD_TO_CART_SUC' : 
+            return{
+                ...state,
+                cart : action.payload,
+                isOrder : false
+            }
+
+        case 'ADD_TO_CART_REJ' : 
+            return{
+                ...state,
+                cart : null,
+                productErr : action.payload,
+                isOrder : false
+            }
+
+        case 'ORDER_SUC' :
+            return{
+                ...state,
+                isOrder : true
             }
 
         default :

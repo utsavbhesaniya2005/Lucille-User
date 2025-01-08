@@ -9,3 +9,19 @@
     letter-spacing: 1px;
     font-weight: 400;
 }
+.table > td{
+    border-right: none !important;
+}
+.product-image{
+    height: 50px !important;
+}
+.table > :not(caption) > * > *{
+    background-color: transparent !important;
+}
+.quantity-input{
+    background-color: transparent !important;
+    border: 1px solid black !important;
+}
+.quantity{
+    width: 5%;
+}

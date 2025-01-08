@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { getUserId } from "../../services/actions/AuthAction";
+import { getCartProduct } from "../../services/actions/ProductAction";
 
 const Home = () => {
 
@@ -19,6 +20,10 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(getUserId());
+    }, [])
+
+    useEffect(() => {
+        dispatch(getCartProduct());
     }, [])
 
     return(
